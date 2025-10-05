@@ -10,5 +10,11 @@
     <resource-bundle>messages.Moonshine</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
+        <fileBasedIndex
+                implementation="com.github.xepozz.moonshine.index.ResourcesIndex"/>
+        <fileBasedIndex
+                implementation="com.github.xepozz.moonshine.index.PagesIndex"/>
+        <fileBasedIndex
+                implementation="com.github.xepozz.moonshine.index.FieldsIndex"/>
     </extensions>
 </idea-plugin>
