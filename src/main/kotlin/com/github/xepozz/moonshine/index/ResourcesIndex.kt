@@ -2,9 +2,6 @@ package com.github.xepozz.moonshine.index
 
 import com.github.xepozz.moonshine.MoonshineClasses
 import com.github.xepozz.spiral.index.AbstractIndex
-import com.intellij.openapi.project.Project
-import com.intellij.openapi.util.text.StringUtil
-import com.intellij.psi.search.GlobalSearchScope
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.util.indexing.DataIndexer
 import com.intellij.util.indexing.FileBasedIndex
@@ -12,13 +9,7 @@ import com.intellij.util.indexing.FileContent
 import com.intellij.util.indexing.ID
 import com.intellij.util.io.EnumeratorStringDescriptor
 import com.jetbrains.php.lang.PhpFileType
-import com.jetbrains.php.lang.psi.elements.ArrayCreationExpression
-import com.jetbrains.php.lang.psi.elements.ClassConstantReference
-import com.jetbrains.php.lang.psi.elements.ClassReference
-import com.jetbrains.php.lang.psi.elements.PhpAttribute
 import com.jetbrains.php.lang.psi.elements.PhpClass
-import com.jetbrains.php.lang.psi.elements.StringLiteralExpression
-import com.jetbrains.php.lang.psi.elements.impl.ClassConstImpl
 
 private typealias ResourcesIndexType = String
 
@@ -39,7 +30,7 @@ class ResourcesIndex : AbstractIndex<ResourcesIndexType>() {
         inputData
             .psiFile
             .let { PsiTreeUtil.findChildrenOfType(it, PhpClass::class.java) }
-            .filter { it.fqn == MoonshineClasses.RESOURCE }
+            .filter { it.superFQN == MoonshineClasses.MODEL_RESOURCE }
             .mapNotNull { it.fqn }
             .associateWith { it }
     }
