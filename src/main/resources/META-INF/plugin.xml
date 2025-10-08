@@ -26,5 +26,10 @@
             <language>PHP</language>
             <className>com.github.xepozz.moonshine.intentions.NewResourceIntention</className>
         </intentionAction>
+
+
+        <notificationGroup id="MoonShine Debug"
+                           displayType="BALLOON"
+                           key="notification.group.debug.name"/>
     </extensions>
 </idea-plugin>

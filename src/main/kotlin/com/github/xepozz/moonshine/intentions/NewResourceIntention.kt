@@ -1,36 +1,22 @@
 package com.github.xepozz.moonshine.intentions
 
 import com.intellij.codeInsight.intention.BaseElementAtCaretIntentionAction
-import com.intellij.codeInsight.intention.IntentionAction
-import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction
-import com.intellij.codeInsight.intention.impl.BaseIntentionAction
 import com.intellij.codeInsight.intention.preview.IntentionPreviewInfo
-import com.intellij.codeInspection.util.IntentionFamilyName
-import com.intellij.codeInspection.util.IntentionName
-import com.intellij.execution.CommandLineUtil
 import com.intellij.execution.process.OSProcessHandler
 import com.intellij.execution.process.ProcessEvent
 import com.intellij.execution.process.ProcessListener
-import com.intellij.modcommand.ModCommandAction
+import com.intellij.notification.NotificationGroupManager
+import com.intellij.notification.NotificationType
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.Key
-import com.intellij.openapi.vfs.VfsUtil
-import com.intellij.openapi.vfs.newvfs.VfsImplUtil
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
 import com.intellij.psi.util.elementType
-import com.jetbrains.php.config.commandLine.PhpCommandLineCommand
-import com.jetbrains.php.config.commandLine.PhpCommandLinePathProcessor
 import com.jetbrains.php.config.commandLine.PhpCommandSettingsBuilder
-import com.jetbrains.php.config.interpreters.PhpInterpreter
-import com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl
 import com.jetbrains.php.lang.lexer.PhpTokenTypes
 import com.jetbrains.php.lang.psi.elements.PhpClass
-import com.jetbrains.php.macro.PhpExecutableMacro
-import com.jetbrains.php.phpunit.PhpUnitExecutionUtil
-import org.jetbrains.php.performanceTesting.PhpCommandProvider
-import org.jetbrains.php.performanceTesting.RunPhpRunConfigurationCommand
 
 class NewResourceIntention : BaseElementAtCaretIntentionAction() {
     override fun getText() = "Create Moonshine Resource"
@@ -50,6 +36,8 @@ class NewResourceIntention : BaseElementAtCaretIntentionAction() {
         element: PsiElement
     ) {
         val element = element.parent as? PhpClass ?: return
+
+        val outputBuffer = StringBuilder()
         PhpCommandSettingsBuilder
             .create(project, false)
             .apply {
@@ -74,10 +62,23 @@ class NewResourceIntention : BaseElementAtCaretIntentionAction() {
                 addProcessListener(object : ProcessListener {
                     override fun onTextAvailable(event: ProcessEvent, outputType: Key<*>) {
                         println("onTextAvailable: ${event.text}")
+
+                        outputBuffer.append(event.text)
                     }
 
                     override fun processTerminated(event: ProcessEvent) {
-                        if (event.exitCode == 0) {
+                        println("processTerminated: ${event.exitCode}")
+
+                        val notificationType = when(event.exitCode) {
+                            0 -> NotificationType.INFORMATION
+                            else -> NotificationType.ERROR
+                        }
+
+                        ApplicationManager.getApplication().invokeLater {
+                            NotificationGroupManager.getInstance()
+                                .getNotificationGroup("MoonShine Debug")
+                                .createNotification("$outputBuffer", notificationType)
+                                .notify(project);
                         }
                     }
                 })
