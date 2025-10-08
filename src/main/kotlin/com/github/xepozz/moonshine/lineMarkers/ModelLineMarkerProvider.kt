@@ -26,19 +26,15 @@ class ModelLineMarkerProvider : RelatedItemLineMarkerProvider() {
 
         if (!PhpClassHierarchyUtils.isSuperClass(modelClass, element, true)) return null
 
-        val resources = findResourceClasses(phpIndex, element)
-
-        println("resources: $resources")
-
         // todo: replace with more suitable icon
         return NavigationGutterIconBuilder.create(MoonshineIcons.MOONSHINE)
             .setTargets(NotNullLazyValue.createValue {
-                resources
-                    .plus(
-                        resources.flatMap { findPagesInResource(it) }
-                    )
+                findResourceClasses(phpIndex, element)
+                    .flatMap {
+                        listOf(it, *findPagesInResource(it).toTypedArray())
+                    }
             })
-            .setTooltipText("Navigate to pages")
+            .setTooltipText("Open MoonShine pages")
             .createLineMarkerInfo(nameIdentifier)
 
     }

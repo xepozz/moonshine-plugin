@@ -32,7 +32,7 @@ class ResourceLineMarkerProvider : RelatedItemLineMarkerProvider() {
             .setTargets(NotNullLazyValue.createValue {
                 listOf((modelClassReference.classReference as? ClassReference)?.resolve())
             })
-            .setTooltipText("Navigate to model")
+            .setTooltipText("Open model")
             .createLineMarkerInfo(nameIdentifier)
 
     }
