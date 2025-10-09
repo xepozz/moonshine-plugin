@@ -1,22 +1,23 @@
-package com.github.xepozz.moonshine.skaffolder
+package com.github.xepozz.moonshine.scaffolder
 
 import com.github.xepozz.moonshine.utils.PhpCommandUtil
 import com.intellij.openapi.actionSystem.AnActionEvent
 
-class NewPageAction : AbstractNewAction() {
+class NewResourceAction : AbstractNewAction() {
     override fun actionPerformed(e: AnActionEvent) {
         val project = e.project ?: return
 
-        NewPageDialog({ state ->
+        NewResourceDialog({ state ->
             PhpCommandUtil.invokeCommand(
                 project,
                 listOfNotNull(
                     "artisan",
-                    "moonshine:page",
+                    "moonshine:resource",
                     state.modelClass,
-                    "--force",
-                    "--crud".takeIf { state.crud },
-                    "--skip-menu".takeIf { state.skipMenu },
+//                    "--model",
+//                    "element.fqn",
+                    "--type",
+                    "${state.type}",
                     "-n",
                 ),
             )

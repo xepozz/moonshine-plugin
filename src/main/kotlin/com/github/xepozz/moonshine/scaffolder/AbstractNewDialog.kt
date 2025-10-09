@@ -1,4 +1,4 @@
-package com.github.xepozz.moonshine.skaffolder
+package com.github.xepozz.moonshine.scaffolder
 
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.ui.dsl.builder.Align

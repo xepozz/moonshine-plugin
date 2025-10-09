@@ -43,57 +43,57 @@
 
             <action
                     id="moonshine.ApplyNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Apply"/>
             <action
                     id="moonshine.ComponentNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Component"/>
             <action
                     id="moonshine.ControllerNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Controller"/>
             <action
                     id="moonshine.FieldNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Field"/>
             <action
                     id="moonshine.HandlerNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Handler"/>
             <action
                     id="moonshine.LayoutNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Layout"/>
             <action
                     id="moonshine.PageNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.NewPageAction"
+                    class="com.github.xepozz.moonshine.scaffolder.NewPageAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Page"/>
             <action
                     id="moonshine.PolicyNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Policy"/>
             <action
                     id="moonshine.ResourceNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.NewResourceAction"
+                    class="com.github.xepozz.moonshine.scaffolder.NewResourceAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Resource"/>
             <action
                     id="moonshine.TypeCastNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Type Cast"/>
             <action
                     id="moonshine.UserNewAction"
-                    class="com.github.xepozz.moonshine.skaffolder.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.scaffolder.AbstractNewAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="User"/>
 

@@ -1,4 +1,4 @@
-package com.github.xepozz.moonshine.skaffolder
+package com.github.xepozz.moonshine.scaffolder
 
 import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.bindText
