@@ -1,4 +1,4 @@
-package com.github.xepozz.moonshine.actions
+package com.github.xepozz.moonshine.skaffolder
 
 import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationType

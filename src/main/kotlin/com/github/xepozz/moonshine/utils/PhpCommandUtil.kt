@@ -1,4 +1,4 @@
-package com.github.xepozz.moonshine.actions
+package com.github.xepozz.moonshine.utils
 
 import com.intellij.execution.process.OSProcessHandler
 import com.intellij.execution.process.ProcessEvent
@@ -10,7 +10,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.Key
 import com.jetbrains.php.config.commandLine.PhpCommandSettingsBuilder
 
-object NewActionsUtil {
+object PhpCommandUtil {
     fun invokeCommand(
         project: Project,
         arguments: List<String>

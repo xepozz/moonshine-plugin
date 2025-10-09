@@ -1,4 +1,4 @@
-package com.github.xepozz.moonshine.dialogs
+package com.github.xepozz.moonshine.skaffolder
 
 import com.intellij.ui.dsl.builder.bind
 import com.intellij.ui.dsl.builder.bindText
@@ -8,7 +8,7 @@ import javax.swing.JComponent
 class NewResourceDialog(
     callback: (State) -> Unit,
     override var state: State = State(),
-) : AbstractNewWrapper<NewResourceDialog.State>(callback) {
+) : AbstractNewDialog<NewResourceDialog.State>(callback) {
     init {
         title = "New Resource"
         init()

@@ -1,6 +1,6 @@
-package com.github.xepozz.moonshine.actions
+package com.github.xepozz.moonshine.skaffolder
 
-import com.github.xepozz.moonshine.dialogs.NewPageDialog
+import com.github.xepozz.moonshine.utils.PhpCommandUtil
 import com.intellij.openapi.actionSystem.AnActionEvent
 
 class NewPageAction : AbstractNewAction() {
@@ -8,7 +8,7 @@ class NewPageAction : AbstractNewAction() {
         val project = e.project ?: return
 
         NewPageDialog({ state ->
-            NewActionsUtil.invokeCommand(
+            PhpCommandUtil.invokeCommand(
                 project,
                 listOfNotNull(
                     "artisan",

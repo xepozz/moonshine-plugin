@@ -1,6 +1,6 @@
 package com.github.xepozz.moonshine.intentions
 
-import com.github.xepozz.moonshine.actions.NewActionsUtil
+import com.github.xepozz.moonshine.utils.PhpCommandUtil
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiElement
@@ -17,7 +17,7 @@ class NewResourceIntention : AbstractNewIntention() {
     ) {
         val element = element.parent as? PhpClass ?: return
 
-        NewActionsUtil.invokeCommand(
+        PhpCommandUtil.invokeCommand(
             project,
             listOf(
                 "artisan",

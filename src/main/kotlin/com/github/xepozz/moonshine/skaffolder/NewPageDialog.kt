@@ -1,4 +1,4 @@
-package com.github.xepozz.moonshine.dialogs
+package com.github.xepozz.moonshine.skaffolder
 
 import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.bindText
@@ -8,7 +8,7 @@ import javax.swing.JComponent
 class NewPageDialog(
     callback: (State) -> Unit,
     override var state: State = State(),
-) : AbstractNewWrapper<NewPageDialog.State>(callback) {
+) : AbstractNewDialog<NewPageDialog.State>(callback) {
     init {
         title = "New Page"
         init()

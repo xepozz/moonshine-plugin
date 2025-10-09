@@ -1,4 +1,4 @@
-package com.github.xepozz.moonshine.dialogs
+package com.github.xepozz.moonshine.skaffolder
 
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.ui.dsl.builder.Align
@@ -6,7 +6,7 @@ import com.intellij.ui.dsl.builder.RightGap
 import com.intellij.ui.dsl.builder.panel
 import javax.swing.JComponent
 
-abstract class AbstractNewWrapper<T>(
+abstract class AbstractNewDialog<T>(
     val callback: (T) -> Unit,
 ) : DialogWrapper(true) {
     abstract var state: T

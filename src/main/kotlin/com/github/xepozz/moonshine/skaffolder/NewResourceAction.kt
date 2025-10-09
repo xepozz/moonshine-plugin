@@ -1,6 +1,6 @@
-package com.github.xepozz.moonshine.actions
+package com.github.xepozz.moonshine.skaffolder
 
-import com.github.xepozz.moonshine.dialogs.NewResourceDialog
+import com.github.xepozz.moonshine.utils.PhpCommandUtil
 import com.intellij.openapi.actionSystem.AnActionEvent
 
 class NewResourceAction : AbstractNewAction() {
@@ -8,7 +8,7 @@ class NewResourceAction : AbstractNewAction() {
         val project = e.project ?: return
 
         NewResourceDialog({ state ->
-            NewActionsUtil.invokeCommand(
+            PhpCommandUtil.invokeCommand(
                 project,
                 listOfNotNull(
                     "artisan",
