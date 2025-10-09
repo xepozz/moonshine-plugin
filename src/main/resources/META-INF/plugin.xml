@@ -73,7 +73,7 @@
                     text="Layout"/>
             <action
                     id="moonshine.PageNewAction"
-                    class="com.github.xepozz.moonshine.actions.AbstractNewAction"
+                    class="com.github.xepozz.moonshine.actions.NewPageAction"
                     icon="com.github.xepozz.moonshine.MoonshineIcons.MOONSHINE"
                     text="Page"/>
             <action
