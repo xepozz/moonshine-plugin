@@ -3,6 +3,6 @@ package com.github.xepozz.moonshine
 import com.intellij.openapi.util.IconLoader
 
 object MoonshineIcons {
-    @JvmStatic
+    @JvmField
     val MOONSHINE = IconLoader.getIcon("/icons/moonshine/icon.svg", MoonshineIcons::class.java)
 }
