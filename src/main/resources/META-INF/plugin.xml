@@ -27,6 +27,10 @@
             <className>com.github.xepozz.moonshine.intentions.NewResourceIntention</className>
         </intentionAction>
 
+        <directoryProjectGenerator
+                implementation="com.github.xepozz.moonshine.scaffolder.project.MoonshineProjectGenerator" />
+        <moduleBuilder
+                builderClass="com.github.xepozz.moonshine.scaffolder.project.MoonshineModuleBuilder" />
 
         <notificationGroup id="MoonShine Debug"
                            displayType="BALLOON"
